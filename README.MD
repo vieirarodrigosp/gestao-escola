@@ -46,9 +46,11 @@ docker run --rm --network=escola_escola-net escola-app python consulta.py
 
 ## 📊 Consultas Importantes
 
+# ✅ Consulta a lista de professores
 ```sql
 SELECT * FROM PROFESSOR;
 ```
+
 # ✅ Carga horária dos professores
 
 ```sql
@@ -71,6 +73,6 @@ GROUP BY s.id, s.name;
 
 ## 📝 Futuras Melhorias
 
-🔹 Criar uma API REST para permitir consultas dinâmicas
-🔹 Desenvolver uma interface web para visualização dos horários disponíveis
-🔹 Criar um dashboard com estatísticas acadêmica
+🔹 Criar uma API REST para permitir consultas dinâmicas  
+🔹 Desenvolver uma interface web para visualização dos horários disponíveis  
+🔹 Criar um dashboard com estatísticas acadêmica  
