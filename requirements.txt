@@ -1,0 +1,6 @@
+## - psycopg2 → Ideal para execução simples de queries SQL.
+psycopg2 
+##- sqlalchemy → Melhor para estruturar consultas e trabalhar com objetos ORM.
+sqlalchemy
+## - pandas → Perfeito para analisar, organizar e salvar os dados de forma tabular.
+pandas

@@ -1,0 +1,64 @@
+SELECT 'CONNECT escola' WHERE EXISTS (SELECT FROM pg_database WHERE datname = 'escola');
+
+CREATE TABLE DEPARTMENT (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    building_id INT
+);
+
+CREATE TABLE TITLE (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE BUILDING (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    location VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE PROFESSOR (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    department_id INT REFERENCES DEPARTMENT(id) ON DELETE CASCADE,
+    title_id INT REFERENCES TITLE(id)
+);
+
+CREATE TABLE SUBJECT (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    taught_by INT REFERENCES PROFESSOR(id) ON DELETE CASCADE
+);
+
+CREATE TABLE SUBJECT_PREREQUISITE (
+    id SERIAL PRIMARY KEY,
+    subject_id INT REFERENCES SUBJECT(id) ON DELETE CASCADE,
+    prerequisite_subject_id INT REFERENCES SUBJECT(id) ON DELETE CASCADE
+);
+
+CREATE TABLE CLASS (
+    id SERIAL PRIMARY KEY,
+    subject_id INT REFERENCES SUBJECT(id) ON DELETE CASCADE
+);
+
+CREATE TABLE ROOM (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    building_id INT REFERENCES BUILDING(id) ON DELETE CASCADE
+);
+
+CREATE TABLE CLASS_SCHEDULE (
+    id SERIAL PRIMARY KEY,
+    class_id INT REFERENCES CLASS(id) ON DELETE CASCADE,
+    room_id INT REFERENCES ROOM(id) ON DELETE CASCADE,
+    day_of_week VARCHAR(20) NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL
+);
+
+-- Criação de índices para otimização das consultas
+CREATE INDEX idx_professor_department ON PROFESSOR(department_id);
+CREATE INDEX idx_subject_taught_by ON SUBJECT(taught_by);
+CREATE INDEX idx_class_subject ON CLASS(subject_id);
+CREATE INDEX idx_class_schedule_class ON CLASS_SCHEDULE(class_id);
+CREATE INDEX idx_class_schedule_room ON CLASS_SCHEDULE(room_id);

@@ -1,0 +1,13 @@
+professor_id	professor_name	subject_id	subject_name	total_hours
+1	Professor A	2	Física Básica	1.5
+1	Professor A	1	Matemática Avançada	1.5
+2	Professor B	3	História Moderna	1.5
+2	Professor B	4	Geografia Geral	1.5
+3	Professor C	5	Química Orgânica	1.5
+3	Professor C	6	Biologia Molecular	1.5
+4	Professor D	7	Literatura Brasileira	1.5
+4	Professor D	8	Gramática Avançada	1.5
+5	Professor E	10	Banco de Dados	1.5
+5	Professor E	9	Programação Python	1.5
+6	Professor F	12	Redes de Computadores	1.5
+6	Professor F	11	Engenharia de Software	1.5

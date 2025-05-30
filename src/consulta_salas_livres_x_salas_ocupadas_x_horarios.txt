@@ -1,0 +1,13 @@
+room_id	room_name	day_of_week	start_time	end_time	status
+1	Sala 101	Monday	08:00:00	09:30:00	Ocupado
+1	Sala 101	Wednesday	08:00:00	09:30:00	Ocupado
+2	Sala 102	Monday	09:30:00	11:00:00	Ocupado
+2	Sala 102	Wednesday	09:30:00	11:00:00	Ocupado
+3	Sala 103	Monday	08:00:00	09:30:00	Ocupado
+3	Sala 103	Thursday	08:00:00	09:30:00	Ocupado
+4	Sala 104	Monday	09:30:00	11:00:00	Ocupado
+4	Sala 104	Thursday	09:30:00	11:00:00	Ocupado
+5	Sala 105	Friday	08:00:00	09:30:00	Ocupado
+5	Sala 105	Tuesday	08:00:00	09:30:00	Ocupado
+6	Sala 106	Friday	09:30:00	11:00:00	Ocupado
+6	Sala 106	Tuesday	09:30:00	11:00:00	Ocupado
